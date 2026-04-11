@@ -183,7 +183,17 @@ export default function App() {
           <div>
             <div style={{ fontSize: 28, fontWeight: 900, letterSpacing: -1 }}>ClinicQ</div>
             <div style={{ color: "#475569", fontSize: 14, marginTop: 4 }}>
-              The operating system for clinical responsibility
+              <h2 className="text-3xl font-bold text-slate-900">
+  ClinicQ is the operating system for clinical responsibility
+</h2>
+
+<p className="mt-3 text-lg text-slate-600">
+  It governs how work moves, who owns it, and what must be completed.
+</p>
+
+<p className="mt-2 text-lg font-semibold text-blue-700">
+  It is the system that controls how AI is allowed to operate — safely, visibly, and accountably.
+</p>
             </div>
           </div>
 
