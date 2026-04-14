@@ -1,7 +1,7 @@
 import React from "react";
 
 const DEMO_URL = "https://demo.clinicq.au";
-const PDF_URL = "/ClinicQ_Elite_OnePager.pdf";
+const PDF_URL = "/ClinicQ_Overview.pdf";
 const LOGO_URL = "/clinicq-logo.png";
 
 type CompareItem = {
