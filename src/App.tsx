@@ -76,19 +76,21 @@ export default function App() {
             <div style={styles.kicker}>Inbox-first MVP</div>
 
             <h1 style={styles.heroTitle}>
-              Clear your inbox faster —
+              CLEAR YOUR INBOX FASTER —
               <br />
               and know nothing has been missed.
             </h1>
 
             <p style={styles.heroSubtitle}>
-              ClinicQ helps you move through your inbox efficiently; it saves you time and reduces your medico-legal risk.
- Instead of relying on memory, habits, or scattered reminders, it turns follow-up work into structured, owned, and closed-loop workflows – something existing systems do not enforce.
+             ClinicQ helps you move through your inbox efficiently while ensuring every follow-up is clearly owned, tracked, and completed.
+Instead of relying on memory, habits, or scattered reminders, it turns follow-up work into structured workflows that stay open until they’re genuinely done.
 
             </p>
 
             <div style={styles.heroAssurance}>
-            Most existing systems store information — but rely on people to follow the workflow.
+           Existing systems store information — and rely on doctors to enforce the workflow.
+ClinicQ builds the workflow into the system itself – so nothing gets lost.
+
 
 
             </div>
