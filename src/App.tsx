@@ -78,16 +78,19 @@ export default function App() {
             <h1 style={styles.heroTitle}>
               Clear your inbox faster —
               <br />
-              without losing track of what needs to happen next
+              and know nothing has been missed.
             </h1>
 
             <p style={styles.heroSubtitle}>
-              ClinicQ helps you move through results, letters, and follow-ups more quickly and more
-              clearly — while ensuring every item is owned, tracked, and completed.
+              ClinicQ helps you move through your inbox efficiently; it saves you time and reduces your medico-legal risk.
+ Instead of relying on memory, habits, or scattered reminders, it turns follow-up work into structured, owned, and closed-loop workflows – something existing systems do not enforce.
+
             </p>
 
             <div style={styles.heroAssurance}>
-              Nothing sits unowned. Nothing disappears. Nothing is assumed done.
+            Most existing systems store information — but rely on people to follow the workflow.
+
+
             </div>
 
             <div style={styles.heroButtons}>
@@ -135,8 +138,7 @@ export default function App() {
           </p>
 
           <div style={styles.statementBox}>
-            ClinicQ saves time and reduces medico-legal risk by turning follow-up work into structured,
-            owned, and closed-loop workflows — something existing systems do not enforce.
+           ClinicQ builds the workflow into the system itself.
           </div>
         </section>
 
