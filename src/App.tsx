@@ -41,6 +41,9 @@ const comparisonItems: CompareItem[] = [
 export default function App() {
   return (
     <div style={styles.app}>
+      <div style={styles.backgroundPattern} />
+      <div style={styles.clinicalGrid} />
+      <div style={styles.colorWash} />
       <div style={styles.glowTop} />
       <div style={styles.glowBottom} />
 
@@ -371,12 +374,42 @@ function PatientCard({ label, name, body }: { label: string; name: string; body:
 const styles: Record<string, React.CSSProperties> = {
   app: {
     minHeight: "100vh",
-    background: "linear-gradient(180deg, #f8fbff 0%, #eef5ff 48%, #f8fafc 100%)",
+    background: "linear-gradient(180deg, #edf7ff 0%, #eef5ff 42%, #f8fafc 100%)",
     color: "#0f172a",
     fontFamily:
       'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     position: "relative",
     overflowX: "hidden",
+  },
+
+  backgroundPattern: {
+    position: "fixed",
+    inset: 0,
+    background:
+      "radial-gradient(circle at 12% 18%, rgba(37,99,235,0.13), transparent 28%), radial-gradient(circle at 88% 12%, rgba(20,184,166,0.13), transparent 30%), radial-gradient(circle at 78% 72%, rgba(249,115,22,0.09), transparent 28%), linear-gradient(135deg, rgba(219,234,254,0.72) 0%, rgba(255,255,255,0.0) 46%, rgba(240,253,244,0.62) 100%)",
+    pointerEvents: "none",
+  },
+  clinicalGrid: {
+    position: "fixed",
+    inset: 0,
+    backgroundImage:
+      "linear-gradient(rgba(37,99,235,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.045) 1px, transparent 1px)",
+    backgroundSize: "38px 38px",
+    maskImage: "linear-gradient(180deg, rgba(0,0,0,0.82), rgba(0,0,0,0.16))",
+    pointerEvents: "none",
+  },
+  colorWash: {
+    position: "fixed",
+    top: 120,
+    left: "50%",
+    transform: "translateX(-50%) rotate(-2deg)",
+    width: "min(1180px, 92vw)",
+    height: 300,
+    borderRadius: 42,
+    background:
+      "linear-gradient(135deg, rgba(37,99,235,0.12), rgba(20,184,166,0.10), rgba(249,115,22,0.08))",
+    filter: "blur(0.2px)",
+    pointerEvents: "none",
   },
   glowTop: {
     position: "fixed",
@@ -443,21 +476,24 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     gap: 10,
     flexWrap: "wrap",
-    width: "100%",
+    justifyContent: "flex-end",
+    flex: "1 1 320px",
   },
   main: {
     maxWidth: 1240,
+    width: "100%",
     margin: "0 auto",
     padding: "8px 16px 36px",
     position: "relative",
     zIndex: 2,
+    boxSizing: "border-box",
   },
   heroSection: {
     display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: 18,
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(420px, 100%), 1fr))",
+    gap: 24,
     alignItems: "stretch",
-    background: "rgba(255,255,255,0.9)",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(239,246,255,0.88) 52%, rgba(240,253,244,0.86) 100%)",
     backdropFilter: "blur(10px)",
     border: "1px solid rgba(148,163,184,0.18)",
     borderRadius: 26,
@@ -510,7 +546,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: "100%",
   },
   heroCard: {
-    background: "linear-gradient(180deg, #0f172a 0%, #172554 100%)",
+    background: "linear-gradient(145deg, #0f172a 0%, #172554 55%, #0f766e 135%)",
     color: "#ffffff",
     borderRadius: 24,
     padding: 20,
@@ -563,7 +599,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   section: {
     marginTop: 20,
-    background: "#ffffff",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(248,250,252,0.94) 100%)",
     border: "1px solid #e2e8f0",
     borderRadius: 24,
     padding: 22,
@@ -614,11 +650,11 @@ const styles: Record<string, React.CSSProperties> = {
   flowGrid: {
     marginTop: 18,
     display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: 12,
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))",
+    gap: 14,
   },
   flowCard: {
-    background: "#f8fafc",
+    background: "linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)",
     border: "1px solid #e2e8f0",
     borderRadius: 18,
     padding: 16,
@@ -663,12 +699,12 @@ const styles: Record<string, React.CSSProperties> = {
   },
   patientGrid: {
     display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: 12,
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
+    gap: 14,
     marginTop: 18,
   },
   patientCard: {
-    background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)",
+    background: "linear-gradient(135deg, #ffffff 0%, #eff6ff 52%, #f0fdf4 100%)",
     border: "1px solid #e2e8f0",
     borderRadius: 18,
     padding: 18,
@@ -695,8 +731,8 @@ const styles: Record<string, React.CSSProperties> = {
   },
   certaintyGrid: {
     display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: 12,
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
+    gap: 14,
     marginTop: 8,
   },
   certaintyBoxMuted: {
@@ -748,7 +784,7 @@ const styles: Record<string, React.CSSProperties> = {
   splitGrid: {
     marginTop: 20,
     display: "grid",
-    gridTemplateColumns: "1fr",
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
     gap: 14,
   },
   splitLeft: {
@@ -809,11 +845,11 @@ const styles: Record<string, React.CSSProperties> = {
   compareGrid: {
     marginTop: 18,
     display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: 12,
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
+    gap: 14,
   },
   compareCard: {
-    background: "#f8fafc",
+    background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
     border: "1px solid #e2e8f0",
     borderRadius: 18,
     padding: 16,
