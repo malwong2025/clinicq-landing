@@ -65,7 +65,7 @@ export default function App() {
 
         <div style={styles.headerButtons}>
           <a href={PDF_URL} target="_blank" rel="noreferrer" style={styles.secondaryButton}>
-            View one-page overview
+            View two-page overview
           </a>
           <a href={DEMO_URL} style={styles.primaryButton}>
             See how it works
@@ -100,7 +100,7 @@ export default function App() {
                 Try the Watchlist demo
               </a>
               <a href={PDF_URL} target="_blank" rel="noreferrer" style={styles.secondaryButtonLarge}>
-                View one-page overview
+                View two-page overview
               </a>
             </div>
           </div>
@@ -334,7 +334,7 @@ export default function App() {
               Try the interactive demo
             </a>
             <a href={PDF_URL} target="_blank" rel="noreferrer" style={styles.secondaryButtonLarge}>
-              Download one-page overview
+              Download two-page overview
             </a>
           </div>
         </section>
