@@ -14,27 +14,27 @@ const comparisonItems: CompareItem[] = [
   {
     area: "Core role",
     typical: "Clinical record system",
-    clinicq: "Workflow governance layer",
+    clinicq: "Responsibility engine for selected follow-up",
   },
   {
-    area: "Tasks & follow-up",
-    typical: "Can be created",
-    clinicq: "Must be owned, tracked, and completed",
+    area: "Patients needing follow-up",
+    typical: "Recorded, recalled, or manually remembered",
+    clinicq: "Deliberately added to a visible Watchlist",
   },
   {
     area: "Ownership",
-    typical: "Often implicit",
-    clinicq: "Explicit and visible",
+    typical: "Often implicit or scattered",
+    clinicq: "Explicit owner and due date",
   },
   {
-    area: "Work visibility",
-    typical: "Distributed across inboxes and habits",
-    clinicq: "Centralised and persistent",
+    area: "Visibility",
+    typical: "Distributed across inboxes, notes, habits, and memory",
+    clinicq: "Persistent until completed or deliberately closed",
   },
   {
     area: "Completion certainty",
     typical: "Often assumed",
-    clinicq: "Clearly closed or still open",
+    clinicq: "Clearly closed — or still open",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function App() {
           />
           <div style={styles.brandTextWrap}>
             <div style={styles.brand}>ClinicQ</div>
-            <div style={styles.brandSub}>Workflow governance for clinical follow-up</div>
+            <div style={styles.brandSub}>Selected Patient Watchlist · workflow governance</div>
           </div>
         </div>
 
@@ -73,31 +73,28 @@ export default function App() {
       <main style={styles.main}>
         <section style={styles.heroSection}>
           <div style={styles.heroTextCol}>
-            <div style={styles.kicker}>Inbox-first MVP</div>
+            <div style={styles.kicker}>Selected Patient Watchlist</div>
 
             <h1 style={styles.heroTitle}>
-              CLEAR YOUR INBOX FASTER —
+              The patients you worry about
               <br />
-              and know nothing has been missed.
+              stay visible until they are dealt with.
             </h1>
 
             <p style={styles.heroSubtitle}>
-             ClinicQ helps you move through your inbox efficiently while ensuring every follow-up is clearly owned, tracked, and completed.
-Instead of relying on memory, habits, or scattered reminders, it turns follow-up work into structured workflows that stay open until they’re genuinely done.
-
+              ClinicQ helps doctors clear the inbox quickly — then deliberately add selected patients
+              to a Watchlist when follow-up must not be lost. Each watched patient has an owner, a due
+              date, and a visible state until the loop is completed or deliberately closed.
             </p>
 
             <div style={styles.heroAssurance}>
-           Existing systems store information — and rely on doctors to enforce the workflow.
-ClinicQ builds the workflow into the system itself – so nothing gets lost.
-
-
-
+              This is not a list of all patients. It is the doctor-curated list of patients you have
+              chosen not to lose.
             </div>
 
             <div style={styles.heroButtons}>
               <a href={DEMO_URL} style={styles.primaryButtonLarge}>
-                See how it works (2 min)
+                Try the Watchlist demo
               </a>
               <a href={PDF_URL} target="_blank" rel="noreferrer" style={styles.secondaryButtonLarge}>
                 View one-page overview
@@ -109,82 +106,100 @@ ClinicQ builds the workflow into the system itself – so nothing gets lost.
             <div style={styles.heroCardTopLine}>What changes tomorrow morning?</div>
 
             <div style={styles.heroCardList}>
-              <div style={styles.heroCardItem}>Less scanning through a messy inbox</div>
-              <div style={styles.heroCardItem}>Less guessing what still needs to happen</div>
-              <div style={styles.heroCardItem}>Less chasing across staff roles</div>
-              <div style={styles.heroCardItem}>Less re-checking whether something was done</div>
+              <div style={styles.heroCardItem}>Routine inbox items can be handled quickly</div>
+              <div style={styles.heroCardItem}>Concerning patients are added with one click</div>
+              <div style={styles.heroCardItem}>Each watched patient gets an owner and due date</div>
+              <div style={styles.heroCardItem}>Overdue follow-up rises back into view automatically</div>
             </div>
 
             <div style={styles.heroCardResult}>
               <div style={styles.heroCardResultLabel}>Result</div>
-              <div style={styles.heroCardResultTitle}>Faster decisions. Clearer follow-up.</div>
+              <div style={styles.heroCardResultTitle}>Less mental load. Fewer lost follow-ups.</div>
               <div style={styles.heroCardResultText}>
-                Less mental load for the doctor and the team.
+                The system holds onto the patients you do not want to lose.
               </div>
             </div>
           </div>
         </section>
 
         <section style={styles.section}>
-          <div style={styles.sectionKicker}>Positioning</div>
-          <h2 style={styles.sectionTitle}>A better way to manage what happens after the consultation</h2>
+          <div style={styles.sectionKicker}>The wedge</div>
+          <h2 style={styles.sectionTitle}>ClinicQ starts with one simple doctor decision</h2>
 
           <p style={styles.sectionText}>
-            Most systems help you record clinical information. ClinicQ helps you manage what happens
-            next.
-          </p>
-
-          <p style={styles.sectionText}>
-            It turns follow-up work into structured workflows that are assigned, visible, and completed
-            in a clear, trackable way.
+            Most inbox items do not need heavy workflow. But every doctor has patients who feel just
+            uncomfortable enough that they should not rely on memory, notes, or hope.
           </p>
 
           <div style={styles.statementBox}>
-           ClinicQ builds the workflow into the system itself.
+            “This patient worries me. I want them actively tracked until follow-up is done.”
           </div>
         </section>
 
         <section style={styles.section}>
-          <div style={styles.sectionKicker}>Inbox wedge</div>
-          <h2 style={styles.sectionTitle}>From inbox → clear action in seconds</h2>
+          <div style={styles.sectionKicker}>Inbox → Watchlist</div>
+          <h2 style={styles.sectionTitle}>From inbox handling to active follow-up in seconds</h2>
 
           <div style={styles.flowGrid}>
             <FlowCard
               number="1"
               title="Inbox item arrives"
-              body="A result, letter, or follow-up lands in the workflow."
+              body="A result, letter, discharge summary, or follow-up concern appears in the workflow."
             />
             <FlowCard
               number="2"
-              title="ClinicQ surfaces what matters"
-              body="The important item is made visible quickly."
+              title="Doctor reviews quickly"
+              body="Routine items can be processed without turning everything into noise."
             />
             <FlowCard
               number="3"
-              title="Next step is clear"
-              body="The required action is obvious, not implied."
+              title="Add to Watchlist"
+              body="The doctor deliberately marks the patient as one not to lose."
             />
             <FlowCard
               number="4"
-              title="Action is taken"
-              body="The right person can move immediately."
+              title="Owner and due date are set"
+              body="Responsibility becomes explicit instead of implied."
             />
             <FlowCard
               number="5"
-              title="Ownership is assigned"
-              body="Responsibility becomes explicit and visible."
+              title="Overdue patients surface"
+              body="Patients do not quietly disappear when follow-up has not happened."
             />
             <FlowCard
               number="6"
-              title="Work stays visible until completion"
-              body="Nothing quietly disappears before it is done."
+              title="Close only when dealt with"
+              body="The patient leaves the Watchlist only after completion or deliberate closure."
             />
           </div>
 
           <div style={styles.resultBand}>
             <div style={styles.resultBandTitle}>
-              Result: faster decisions, clearer follow-up, less mental load
+              Result: fast inbox handling, selected active tracking, and closed-loop completion.
             </div>
+          </div>
+        </section>
+
+        <section style={styles.section}>
+          <div style={styles.sectionKicker}>Why doctors feel it immediately</div>
+          <h2 style={styles.sectionTitle}>Three patients doctors recognise instantly</h2>
+
+          <div style={styles.patientGrid}>
+            <PatientCard
+              label="Acute result"
+              name="Sarah Mitchell"
+              body="High potassium. Needs same-day follow-up. This is the patient you do not want sitting in the back of your mind."
+            />
+            <PatientCard
+              label="Vulnerable patient"
+              name="Margaret Wilson"
+              body="Residential aged care, dementia, post-discharge medication changes. She cannot be expected to manage the follow-up herself."
+            />
+            <PatientCard
+              label="Non-attendance risk"
+              name="Daniel Reed"
+              body="Mental health follow-up planned, but attendance is uncertain. Advice alone may not be enough."
+            />
           </div>
         </section>
 
@@ -210,47 +225,47 @@ ClinicQ builds the workflow into the system itself – so nothing gets lost.
 
           <p style={styles.sectionText}>
             A pathology result arrives: <strong>High potassium.</strong> You have seen it. You intend
-            to act.
+            to act. You may even have documented the intention.
           </p>
 
-          <div style={styles.problemQuestion}>What guarantees that it actually gets done?</div>
+          <div style={styles.problemQuestion}>What guarantees that the follow-up actually happens?</div>
 
           <div style={styles.splitGrid}>
             <div style={styles.splitLeft}>
               <div style={styles.splitHeaderLeft}>WITHOUT CLINICQ</div>
               <ul style={styles.splitList}>
-                <li>Disappears</li>
-                <li>No owner</li>
-                <li>No confirmation</li>
-                <li>No record</li>
+                <li>Reviewed</li>
+                <li>Intended</li>
+                <li>Mentally noted</li>
+                <li>Easy to lose</li>
               </ul>
-              <div style={styles.splitBottomLeft}>No proof it was done</div>
+              <div style={styles.splitBottomLeft}>No visible responsibility loop</div>
             </div>
 
             <div style={styles.splitRight}>
               <div style={styles.splitHeaderRight}>WITH CLINICQ</div>
               <ul style={styles.splitList}>
-                <li>Assigned</li>
-                <li>Tracked</li>
-                <li>Completed</li>
-                <li>Verified</li>
+                <li>Added to Watchlist</li>
+                <li>Owner assigned</li>
+                <li>Due date visible</li>
+                <li>Closed only when dealt with</li>
               </ul>
-              <div style={styles.splitBottomRight}>Provable, auditable closure</div>
+              <div style={styles.splitBottomRight}>Visible, auditable closure</div>
             </div>
           </div>
 
           <div style={styles.problemTakeaway}>
-            The difference is not convenience. It’s whether you can prove what happened.
+            ClinicQ does not replace clinical judgment. It makes the responsibility visible until it is resolved.
           </div>
         </section>
 
         <section style={styles.section}>
           <div style={styles.sectionKicker}>Comparison</div>
-          <h2 style={styles.sectionTitle}>A different way of thinking about clinical systems</h2>
+          <h2 style={styles.sectionTitle}>A different way of thinking about follow-up</h2>
 
           <p style={styles.sectionText}>
-            Most systems, like Best Practice, rely on people to follow the workflow. ClinicQ builds
-            the workflow into the system itself.
+            EMRs store clinical information. Booking systems manage appointments. AI tools generate outputs.
+            ClinicQ governs the follow-up responsibility that can otherwise disappear between them.
           </p>
 
           <div style={styles.compareGrid}>
@@ -274,20 +289,21 @@ ClinicQ builds the workflow into the system itself – so nothing gets lost.
 
         <section style={styles.section}>
           <div style={styles.sectionKicker}>Governance layer</div>
-          <h2 style={styles.sectionTitle}>Work that doesn’t get lost</h2>
+          <h2 style={styles.sectionTitle}>Human-in-the-loop by design</h2>
 
           <p style={styles.sectionText}>
-            ClinicQ doesn’t replace your clinical system. It adds a layer of structure and visibility
-            so that follow-up work is consistently tracked, clearly owned, and completed.
+            ClinicQ is not an EMR, not a booking system, and not an AI doctor. It does not diagnose,
+            triage, prescribe, or replace clinical judgment. The clinician chooses what matters; ClinicQ
+            keeps the responsibility visible until completion.
           </p>
 
           <div style={styles.governanceBox}>
             <div style={styles.governanceTitle}>
-              ClinicQ is the system that controls how AI is allowed to operate.
+              Integration without dependency. Accountability without automation overreach.
             </div>
             <div style={styles.governanceText}>
-              In ClinicQ, AI does not act independently. The system defines what it can do, when it can
-              act, and what must be verified before anything is complete.
+              ClinicQ can start alongside existing systems. Deeper integration can come later, but the
+              core safety behaviour is the same: selected follow-up is owned, tracked, auditable, and closed-loop.
             </div>
           </div>
         </section>
@@ -304,11 +320,11 @@ ClinicQ builds the workflow into the system itself – so nothing gets lost.
             />
             <div>
               <div style={styles.ctaBrand}>ClinicQ</div>
-              <div style={styles.ctaTag}>Nothing falls through the cracks</div>
+              <div style={styles.ctaTag}>For the patients you do not want to lose</div>
             </div>
           </div>
 
-          <div style={styles.ctaTitle}>See what happens when nothing falls through the cracks</div>
+          <div style={styles.ctaTitle}>See the Selected Patient Watchlist in action</div>
 
           <div style={styles.ctaButtons}>
             <a href={DEMO_URL} style={styles.primaryButtonLarge}>
@@ -338,6 +354,16 @@ function FlowCard({
       <div style={styles.flowNumber}>{number}</div>
       <div style={styles.flowTitle}>{title}</div>
       <div style={styles.flowBody}>{body}</div>
+    </div>
+  );
+}
+
+function PatientCard({ label, name, body }: { label: string; name: string; body: string }) {
+  return (
+    <div style={styles.patientCard}>
+      <div style={styles.patientLabel}>{label}</div>
+      <div style={styles.patientName}>{name}</div>
+      <div style={styles.patientBody}>{body}</div>
     </div>
   );
 }
@@ -450,11 +476,11 @@ const styles: Record<string, React.CSSProperties> = {
     marginBottom: 16,
   },
   heroTitle: {
-    fontSize: 38,
-    lineHeight: 1.06,
-    letterSpacing: -1.5,
+    fontSize: "clamp(2.35rem, 7vw, 4.15rem)",
+    lineHeight: 1.03,
+    letterSpacing: -1.8,
     margin: "0 0 14px 0",
-    maxWidth: 760,
+    maxWidth: 820,
     color: "#0f172a",
   },
   heroSubtitle: {
@@ -462,7 +488,7 @@ const styles: Record<string, React.CSSProperties> = {
     lineHeight: 1.6,
     color: "#334155",
     margin: 0,
-    maxWidth: 760,
+    maxWidth: 780,
   },
   heroAssurance: {
     marginTop: 18,
@@ -474,7 +500,7 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 800,
     fontSize: 16,
     lineHeight: 1.5,
-    maxWidth: 760,
+    maxWidth: 780,
   },
   heroButtons: {
     display: "flex",
@@ -560,7 +586,7 @@ const styles: Record<string, React.CSSProperties> = {
     marginBottom: 10,
   },
   sectionTitle: {
-    fontSize: 31,
+    fontSize: "clamp(1.8rem, 5vw, 2.3rem)",
     lineHeight: 1.12,
     letterSpacing: -1.1,
     margin: "0 0 14px 0",
@@ -580,9 +606,9 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: 18,
     padding: 18,
     color: "#0f172a",
-    fontSize: 18,
-    lineHeight: 1.6,
-    fontWeight: 800,
+    fontSize: 22,
+    lineHeight: 1.45,
+    fontWeight: 900,
     maxWidth: 980,
   },
   flowGrid: {
@@ -634,6 +660,38 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 800,
     lineHeight: 1.38,
     letterSpacing: -0.4,
+  },
+  patientGrid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: 12,
+    marginTop: 18,
+  },
+  patientCard: {
+    background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)",
+    border: "1px solid #e2e8f0",
+    borderRadius: 18,
+    padding: 18,
+  },
+  patientLabel: {
+    color: "#2563eb",
+    fontSize: 12,
+    fontWeight: 900,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    marginBottom: 8,
+  },
+  patientName: {
+    fontSize: 20,
+    fontWeight: 900,
+    color: "#0f172a",
+    letterSpacing: -0.4,
+    marginBottom: 8,
+  },
+  patientBody: {
+    color: "#475569",
+    lineHeight: 1.62,
+    fontSize: 15,
   },
   certaintyGrid: {
     display: "grid",
