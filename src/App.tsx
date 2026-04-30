@@ -79,15 +79,13 @@ export default function App() {
             <div style={styles.kicker}>Selected Patient Watchlist</div>
 
             <h1 style={styles.heroTitle}>
-              The patients you worry about
+              Nothing important falls through the cracks
               <br />
-              stay visible until they are dealt with.
+              because responsibility stays visible.
             </h1>
 
             <p style={styles.heroSubtitle}>
-              ClinicQ helps doctors clear the inbox quickly — then deliberately add selected patients
-              to a Watchlist when follow-up must not be lost. Each watched patient has an owner, a due
-              date, and a visible state until the loop is completed or deliberately closed.
+              ClinicQ doesn’t just record what you did — it makes sure what needs to happen actually happens. Doctors can clear the inbox quickly, then add selected patients to a Watchlist when follow-up must not be lost. Each watched patient has an owner, a next action, a due date, and a visible state until the loop is completed or deliberately closed.
             </p>
 
             <div style={styles.heroAssurance}>
@@ -111,7 +109,8 @@ export default function App() {
             <div style={styles.heroCardList}>
               <div style={styles.heroCardItem}>Routine inbox items can be handled quickly</div>
               <div style={styles.heroCardItem}>Concerning patients are added with one click</div>
-              <div style={styles.heroCardItem}>Each watched patient gets an owner and due date</div>
+              <div style={styles.heroCardItem}>Each watched patient gets an owner, next action, and due date</div>
+              <div style={styles.heroCardItem}>Unowned or overdue follow-up is treated as unsafe</div>
               <div style={styles.heroCardItem}>Overdue follow-up rises back into view automatically</div>
             </div>
 
@@ -119,7 +118,7 @@ export default function App() {
               <div style={styles.heroCardResultLabel}>Result</div>
               <div style={styles.heroCardResultTitle}>Less mental load. Fewer lost follow-ups.</div>
               <div style={styles.heroCardResultText}>
-                The system holds onto the patients you do not want to lose.
+                The system makes responsibility visible and unavoidable.
               </div>
             </div>
           </div>
@@ -179,6 +178,14 @@ export default function App() {
           <div style={styles.resultBand}>
             <div style={styles.resultBandTitle}>
               Result: fast inbox handling, selected active tracking, and closed-loop completion.
+            </div>
+          </div>
+
+          <div style={styles.attentionBox}>
+            <div style={styles.attentionKicker}>Daily What Needs Attention</div>
+            <div style={styles.attentionTitle}>When the doctor opens ClinicQ, the Watchlist is front and centre.</div>
+            <div style={styles.attentionText}>
+              Only the patients that matter right now are surfaced: overdue, unowned, no-response, or at risk of falling through. Unowned = unsafe until a clinician or team member accepts responsibility.
             </div>
           </div>
         </section>
@@ -291,6 +298,15 @@ export default function App() {
         </section>
 
         <section style={styles.section}>
+          <div style={styles.sectionKicker}>Controlled AI layer</div>
+          <h2 style={styles.sectionTitle}>ClinicQ can suggest — but it cannot act.</h2>
+
+          <p style={styles.sectionText}>
+            The AI layer is deliberately subtle: it can pre-fill suggested next steps, owners, follow-up wording, and risk notes, but it cannot create tasks, assign owners, escalate, close loops, message patients, diagnose, prescribe, or autonomously triage. The clinician must approve, edit, or reject before anything enters the workflow.
+          </p>
+        </section>
+
+        <section style={styles.section}>
           <div style={styles.sectionKicker}>Governance layer</div>
           <h2 style={styles.sectionTitle}>Human-in-the-loop by design</h2>
 
@@ -305,8 +321,7 @@ export default function App() {
               Integration without dependency. Accountability without automation overreach.
             </div>
             <div style={styles.governanceText}>
-              ClinicQ can start alongside existing systems. Deeper integration can come later, but the
-              core safety behaviour is the same: selected follow-up is owned, tracked, auditable, and closed-loop.
+              ClinicQ can start alongside Best Practice, MedicalDirector, and other existing systems without API setup, IT involvement, or long onboarding. Deeper integration can come later, but the core safety behaviour is the same: selected follow-up is owned, tracked, auditable, and closed-loop.
             </div>
           </div>
         </section>
@@ -323,7 +338,7 @@ export default function App() {
             />
             <div>
               <div style={styles.ctaBrand}>ClinicQ</div>
-              <div style={styles.ctaTag}>For the patients you do not want to lose</div>
+              <div style={styles.ctaTag}>Build the system doctors didn’t realise they needed — until they see what they’ve been missing.</div>
             </div>
           </div>
 
@@ -596,6 +611,34 @@ const styles: Record<string, React.CSSProperties> = {
     color: "rgba(255,255,255,0.84)",
     lineHeight: 1.55,
     fontSize: 14,
+  },
+  attentionBox: {
+    marginTop: 16,
+    padding: 18,
+    borderRadius: 18,
+    background: "linear-gradient(135deg, #fff1f2 0%, #eff6ff 100%)",
+    border: "1px solid #fecdd3",
+  },
+  attentionKicker: {
+    color: "#dc2626",
+    fontWeight: 900,
+    fontSize: 12,
+    textTransform: "uppercase",
+    letterSpacing: 1.1,
+    marginBottom: 8,
+  },
+  attentionTitle: {
+    color: "#0f172a",
+    fontWeight: 900,
+    fontSize: 20,
+    lineHeight: 1.25,
+    marginBottom: 8,
+  },
+  attentionText: {
+    color: "#334155",
+    fontWeight: 650,
+    lineHeight: 1.55,
+    fontSize: 15,
   },
   section: {
     marginTop: 20,
